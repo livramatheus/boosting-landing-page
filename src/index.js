@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-
-import App from "./App";
+import "./styles.css";
+import Home from "./pages/Home";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <Home />
   </StrictMode>,
   rootElement
 );

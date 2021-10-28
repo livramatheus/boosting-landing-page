@@ -1,4 +1,282 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  height: 100vh;
+}
+
+/* NavBar */
+.top-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 6rem 0 6rem;
+  align-items: center;
+}
+
+.navbar-pages {
+  display: flex;
+  gap: 3rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.navbar-pages a {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar-pages a:hover {
+  color: #000;
+}
+
+.navbar-pages a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-pages a:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar-control {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-control .btn {
+  padding: 0.6rem 1.1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.navbar-control .btn:hover {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-control .white {
+  border: 1px solid black;
+}
+
+.navbar-control .black {
+  color: white;
+  background-color: black;
+}
+
+/* Section Landing Page */
+.landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 80vh;
+  padding-left: 6rem;
+}
+
+.landing-image {
+  height: 80vh;
+  width: 50%;
+}
+
+.landing-info h1 {
+  font-size: 3.5rem;
+}
+
+.landing-info .btn {
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(
+    93.11deg,
+    #d15083 3.68%,
+    #d9696b 52%,
+    #e46a48 97.38%
+  );
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 40px;
+  width: fit-content;
+  box-shadow: 0px 6px 8px 1px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+  transition: 0.5s ease-in-out;
+}
+
+.landing-info .btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0px 12px 10px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Burger */
+.bm-burger-button {
+  display: none;
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 3.2rem;
+}
+
+.bm-burger-bars {
+  background: black;
+}
+
+.bm-burger-bars-hover {
+  background: red;
+}
+
+.bm-cross-button {
+  display: none;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: white;
+}
+
+.bm-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #b8b7ad;
+}
+
+.bm-item-list a {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex !important;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.bm-item {
+  display: inline-block;
+  padding: 0.2rem;
+}
+
+.bm-overlay {
+  background: rgba(228, 106, 72, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@media screen and (max-width: 900px) {
+  .landing {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .landing-info,
+  .landing-image {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .landing-image {
+    height: 50vh;
+  }
+
+  .landing-info {
+    height: 20vh;
+  }
+
+  .landing-info h1 {
+    font-size: 1.7rem;
+  }
+
+  .top-navbar {
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  #root {
+    padding: 0;
+  }
+
+  .navbar-pages,
+  .navbar-logo {
+    display: none;
+  }
+
+  .bm-burger-button {
+    display: inline-block;
+  }
+
+  .navbar-control {
+    padding: 0 1.5rem 0 1.5rem;
+  }
+
+  .landing-info {
+    padding: 0 1.5rem 0 1.5rem;
+  }
+
+  .landing-info .btn {
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 0.6rem 2.1rem;
+    box-shadow: 0px 6px 8px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid white;
+  }
+
+  .navbar-control .btn {
+    padding: 0.5rem 0.9rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    .landing-image {
+      height: 40vh;
+    }
+
+    .landing-info {
+      height: 30vh;
+    }
+  }
 }
